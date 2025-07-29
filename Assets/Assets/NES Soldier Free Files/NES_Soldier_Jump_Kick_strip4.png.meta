@@ -105,6 +105,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -209,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NES_Soldier_Jump_Kick_strip4_0: 8164368460491676388
+      NES_Soldier_Jump_Kick_strip4_1: -3778562311306519670
+      NES_Soldier_Jump_Kick_strip4_2: 2786574676513758094
+      NES_Soldier_Jump_Kick_strip4_3: -6922307067660194451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

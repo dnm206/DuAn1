@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using System.Diagnostics;
+using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
@@ -38,9 +39,10 @@ public class BaseController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth -= Mathf.RoundToInt(damage);
+        
         if (currentHealth <= 0)
         {
             Die();

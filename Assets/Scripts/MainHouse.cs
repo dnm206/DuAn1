@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Diagnostics;
 using UnityEngine;
+using System.Collections;
 
 public class BaseController : MonoBehaviour
 {
     public int maxHealth = 1000;
-    private int currentHealth;
+    protected int currentHealth;
 
     public GameObject[] unitPrefabs;
     public Transform spawnPoint;
@@ -13,9 +12,9 @@ public class BaseController : MonoBehaviour
 
     public int thoiDai = 0;
     public GameObject[] turrets;
-    private GameObject currentTurret;
+    protected GameObject currentTurret;
 
-    void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         StartCoroutine(AutoSpawnUnits());
@@ -31,7 +30,7 @@ public class BaseController : MonoBehaviour
         }
     }
 
-    void SpawnUnit()
+    protected virtual void SpawnUnit()
     {
         if (unitPrefabs.Length > thoiDai)
         {
@@ -39,20 +38,20 @@ public class BaseController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= Mathf.RoundToInt(damage);
-        
+        Debug.Log($"{gameObject.name} took {damage} damage. Current HP: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    void Die()
+    protected virtual void Die()
     {
         Debug.Log("Base destroyed!");
-
     }
 
     public void LenDoi()
@@ -65,7 +64,7 @@ public class BaseController : MonoBehaviour
         }
     }
 
-    void DeployTurret(int era)
+    protected virtual void DeployTurret(int era)
     {
         if (currentTurret != null)
         {

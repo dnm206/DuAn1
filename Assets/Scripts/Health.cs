@@ -6,12 +6,12 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 100f;
     private float currentHealth;
 
-    public Image healthBarFill; // Gán Image xanh của thanh máu
+    //public Image healthBarFill; // Gán Image xanh của thanh máu
 
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateHealthBar();
+        //UpdateHealthBar();
     }
 
     public void TakeDamage(float damage)
@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
 
-        UpdateHealthBar();
+        //UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
@@ -27,13 +27,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthBar()
+    /*void UpdateHealthBar()
     {
         if (healthBarFill != null)
         {
             healthBarFill.fillAmount = currentHealth / maxHealth;
         }
-    }
+    }*/
 
     void Die()
     {

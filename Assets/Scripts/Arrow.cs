@@ -3,6 +3,7 @@
 public class Arrow : MonoBehaviour
 {
     public float speed = 10f;
+    public float damage = 20f; // Sát thương gây ra
     private Vector2 direction;
 
     void Start()
@@ -27,11 +28,12 @@ public class Arrow : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Trúng enemy → Xóa cả 2");
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage); // Gọi hàm trừ máu
+            }
+            Destroy(gameObject); // Xóa mũi tên sau khi trúng
         }
     }
-
-
 }

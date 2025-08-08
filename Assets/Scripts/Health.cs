@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 100f; // Máu tối đa
+    public float maxHealth = 100f;
     private float currentHealth;
 
-    public Image healthBarFill; // Phần fill của thanh máu (UI Image)
+    public Image healthBarFill; // Gán Image xanh của thanh máu
 
     void Start()
     {
@@ -37,6 +37,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject); // Xóa quái khi chết
+        Destroy(gameObject);
     }
 }
